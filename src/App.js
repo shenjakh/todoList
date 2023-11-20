@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import TodoList from './TodoList';
-import './App.css';
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import TodoList from "./TodoList";
+import "./App.css";
 
 function App() {
   const [todoIdCounter, setTodoIdCounter] = useState(0);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [todos, setTodos] = useState([]);
 
   const addNewTodo = () => {
@@ -22,7 +22,7 @@ function App() {
       },
     ]);
     setTodoIdCounter(todoIdCounter + 1);
-    setInputValue('');
+    setInputValue("");
   };
 
   const handleInputChange = (event) => {
@@ -66,7 +66,7 @@ function App() {
         <Box
           sx={{
             maxWidth: 400,
-            width: '100%',
+            width: "100%",
           }}
         >
           <Stack spacing={2} direction="row">
@@ -77,35 +77,39 @@ function App() {
               value={inputValue}
               onChange={handleInputChange}
               onKeyDown={(ev) => {
-                if (ev.key === 'Enter') {
+                if (ev.key === "Enter") {
                   addNewTodo();
                   ev.preventDefault();
                 }
               }}
               InputLabelProps={{
-                style: { color: 'white' },
+                style: { color: "white" },
               }}
               InputProps={{
-                style: { color: 'white' },
+                style: { color: "white" },
                 disableUnderline: true,
               }}
-              style={{ color: 'white' }}
+              style={{ color: "white" }}
             />
             <Button
               variant="outlined"
               onClick={addNewTodo}
-              style={{ color: 'white', borderColor: 'white' }}
+              style={{ color: "white", borderColor: "white" }}
             >
               Add
             </Button>
           </Stack>
-          <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+          <TodoList
+            todos={todos}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+          />
           <Stack spacing={2} direction="row" mt={2}>
             <Button
               variant="outlined"
               size="small"
               onClick={selectAllTodos}
-              style={{ color: 'white', borderColor: 'white' }}
+              style={{ color: "white", borderColor: "white" }}
             >
               Check All
             </Button>
@@ -113,7 +117,7 @@ function App() {
               variant="outlined"
               size="small"
               onClick={deleteAllTodos}
-              style={{ color: 'white', borderColor: 'white' }}
+              style={{ color: "white", borderColor: "white" }}
             >
               Delete All
             </Button>
@@ -121,7 +125,7 @@ function App() {
               variant="outlined"
               size="small"
               onClick={deleteCheckedTodos}
-              style={{ color: 'white', borderColor: 'white' }}
+              style={{ color: "white", borderColor: "white" }}
             >
               Delete Checked
             </Button>
@@ -132,4 +136,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
