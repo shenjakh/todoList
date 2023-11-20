@@ -87,7 +87,7 @@ function App() {
               }}
               InputProps={{
                 style: { color: 'white' },
-                disableUnderline: true, // This removes the underline
+                disableUnderline: true,
               }}
               style={{ color: 'white' }}
             />
