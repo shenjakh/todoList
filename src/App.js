@@ -107,7 +107,7 @@ function App() {
               onClick={selectAllTodos}
               style={{ color: 'white', borderColor: 'white' }}
             >
-              Select All
+              Check All
             </Button>
             <Button
               variant="outlined"
